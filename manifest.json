@@ -1,23 +1,21 @@
 {
-    "name": "WhatsApp Monitor",
-    "version": "1.1",
-    "manifest_version": 3,
-    "author": "Nwachukwu Chibuike",
-    "description": "Monitors chat messages for specific keywords and returns desired response.",
-    "icons":{
-      "128":"/src/img/icon.png"
-      },
-    "background": {
-      "service_worker": "src/js/background.js"
-    },
-    "action": {
-      "default_title": "WhatsApp  Monitor",
-      "default_popup": "index.html"
-    },
-    "permissions": [
-      "scripting",
-      "activeTab",
-      "storage",
-      "tabs"
-    ]
-  }
+  "name": "Autoreply!",
+  "version": "1.1",
+  "manifest_version": 3,
+  "author": "SR",
+  "description": "Let me set up some autoreply scripts for you!",
+  "icons": {
+    "16": "src/img/icons8-chrome-hand-drawn-16.png",
+    "32": "src/img/icons8-chrome-hand-drawn-32.png",
+    "48": "src/img/icons8-chrome-hand-drawn-96.png",
+    "128": "src/img/icons8-chrome-hand-drawn-120.png"
+  },
+  "background": {
+    "service_worker": "src/js/background.js"
+  },
+  "action": {
+    "default_title": "Autoreply!",
+    "default_popup": "index.html"
+  },
+  "permissions": ["scripting", "activeTab", "storage", "tabs"]
+}
