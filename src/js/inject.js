@@ -27,13 +27,11 @@ chat = async () => {
     let newList = [];
     let stable = Array.from(document.querySelectorAll("._21S-L"));
     stable.forEach((element, i) => {
-      console.log(element);
       let obj = {};
       obj.value = i;
       obj.innerText = element.innerText;
       newList.push(obj);
     });
-    console.log(newList);
     chrome.storage.sync.set({ chatt: newList });
   }
 };
@@ -125,10 +123,9 @@ inject = async () => {
           ".selectable-text.copyable-text span"
         )[count - 1].innerText;
         iniLen = len;
-        console.log(temp);
 
-        //loop through all responses and values and check
-        const response = await fetch("https://idcman.free.beeceptor.com", {
+        //loop through  all responses and values and check
+        const response = await fetch("https://extractor.free.beeceptor.com", {
           method: "POST",
           body: JSON.stringify({ data: temp }),
         });
@@ -140,9 +137,10 @@ inject = async () => {
               return;
             } else {
               let responses = item.response.split(",");
-              console.log(responses.length);
+
+              console.log(responses);
               for (i = 0; i < responses.length; i++) {
-                await document.execCommand("insertText", false, responses[i]);
+                document.execCommand("insertText", false, responses[i]);
                 await sleep(1000);
                 if (responses[0].trim() && values.trim()) {
                   document
